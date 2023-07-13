@@ -7,11 +7,6 @@ export const MainView = () => {
 
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-
-
-
-
-
   useEffect(() => {
     fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/movies")
       .then((response) => response.json())
@@ -45,15 +40,6 @@ export const MainView = () => {
   }, []);
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
   if (selectedMovie) {
     return (
       <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
@@ -78,4 +64,3 @@ export const MainView = () => {
     </div>
   );
 };
-
