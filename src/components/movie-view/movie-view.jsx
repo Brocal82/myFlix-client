@@ -11,15 +11,29 @@ export const MovieView = ({ movie, onBackClick }) => {
       <div>
         <div>
           <span>Genre: </span>
-          <span>{movie.genre.Name}</span>
+          <span>{movie.Genre.Name}</span>
         </div>
-        <span>Description: </span>
-        <span>{movie.genre.Description}</span>
+        <div>
+          <span>Description: </span>
+          <span>{movie.Genre.Description}</span>
+        </div>
       </div>
+      
       <div>
-        <span>Director: </span>
-        <span>{movie.director.Name}</span>
+        <div>
+          <span>Director: </span>
+          <span>{movie.Director.Name}</span>
+        </div>
+        <div>
+          <span>Bio: </span>
+          <span>{movie.Director.Bio}</span>
+        </div>
+        <div>
+          <span>Birthday Year: </span>
+          <span>{movie.Director.BirthYear}</span>
+        </div>
       </div>
+      
       
       <button onClick={onBackClick}>Back</button>
     </div>

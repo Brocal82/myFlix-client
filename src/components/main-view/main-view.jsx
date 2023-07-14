@@ -18,14 +18,14 @@ export const MainView = () => {
           return {
             _id: doc._id,
             Title: doc.Title,
-          
-            Genre: doc.Genre.Name,
-            GenreDescription: doc.Genre.Description,
-            
+            Genre: {
+            Name: doc.Genre.Name,
+            Description: doc.Genre.Description,
+           },
             Director: {
               Name: doc.Director.Name,
               Bio: doc.Director.Bio,
-              birthYear: doc.Director.BirthYear,
+              BirthYear: doc.Director.BirthYear,
               DeathYear: doc.Director.DeathYear,
             },
             Actors: doc.Actors,
