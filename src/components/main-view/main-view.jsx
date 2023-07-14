@@ -12,23 +12,25 @@ export const MainView = () => {
       .then((response) => response.json())
       .then((data) => {
         
-        console.log(data); //provisional to find the error
+          console.log(data); //provisional to find the error
     
-        const moviesFromApi = data.movies.map((doc) => {
+        const moviesFromApi = data.map((doc) => {
           return {
-            id: doc._id,
-            title: doc.Title,
-            genre: doc.Genre.Name,
-            genreDescription: doc.Genre.Description,
-            director: {
-              name: doc.Director.Name,
-              bio: doc.Director.Bio,
-              birthYear: doc.Director.BirthYear,
-              deathYear: doc.Director.DeathYear,
+            _id: doc._id,
+            Title: doc.Title,
+            Genre: {
+            Genre: doc.Genre.Name,
+            GenreDescription: doc.Genre.Description,
             },
-            actors: doc.Actors,
-            imageUrl: doc.ImageUrl,
-            featured: doc.Featured,
+            Director: {
+              Name: doc.Director.Name,
+              Bio: doc.Director.Bio,
+              birthYear: doc.Director.BirthYear,
+              DeathYear: doc.Director.DeathYear,
+            },
+            Actors: doc.Actors,
+            ImageUrl: doc.ImageUrl,
+            Featured: doc.Featured,
           };
         });
         setMovies(moviesFromApi);
