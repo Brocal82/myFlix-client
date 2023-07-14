@@ -27183,10 +27183,8 @@ const MainView = ()=>{
                 return {
                     _id: doc._id,
                     Title: doc.Title,
-                    Genre: {
-                        Genre: doc.Genre.Name,
-                        GenreDescription: doc.Genre.Description
-                    },
+                    Genre: doc.Genre.Name,
+                    GenreDescription: doc.Genre.Description,
                     Director: {
                         Name: doc.Director.Name,
                         Bio: doc.Director.Bio,
@@ -27280,18 +27278,18 @@ _c = MovieCard;
 MovieCard.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
         _id: (0, _propTypesDefault.default).string.isRequired,
-        title: (0, _propTypesDefault.default).string.isRequired,
-        genre: (0, _propTypesDefault.default).shape({
+        Title: (0, _propTypesDefault.default).string.isRequired,
+        Genre: (0, _propTypesDefault.default).shape({
             Name: (0, _propTypesDefault.default).string.isRequired,
             Description: (0, _propTypesDefault.default).string.isRequired
         }).isRequired,
-        director: (0, _propTypesDefault.default).shape({
+        Director: (0, _propTypesDefault.default).shape({
             Name: (0, _propTypesDefault.default).string.isRequired,
             Bio: (0, _propTypesDefault.default).string.isRequired,
             BirthYear: (0, _propTypesDefault.default).number.isRequired,
             DeathYear: (0, _propTypesDefault.default).number
         }).isRequired,
-        actors: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).string).isRequired,
+        Actors: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).string).isRequired,
         ImageUrl: (0, _propTypesDefault.default).string.isRequired,
         Featured: (0, _propTypesDefault.default).bool.isRequired
     }).isRequired
