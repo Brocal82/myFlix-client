@@ -29,8 +29,12 @@ export const MovieView = ({ movie, onBackClick }) => {
           <span>{movie.Director.Bio}</span>
         </div>
         <div>
-          <span>Birthday Year: </span>
+          <span>BirthYear: </span>
           <span>{movie.Director.BirthYear}</span>
+        </div>
+        <div>
+          <span>DeathYear: </span>
+          <span>{movie.Director.DeathYear}</span>
         </div>
       </div>
       
