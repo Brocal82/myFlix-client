@@ -37,6 +37,7 @@ export const LoginView = ({ onLoggedIn }) => {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
           />
       </label>
 
@@ -46,6 +47,7 @@ export const LoginView = ({ onLoggedIn }) => {
         type="password" 
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        required
         />
 
       </label>
