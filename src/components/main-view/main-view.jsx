@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
 
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
     fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/movies")
       .then((response) => response.json())
       .then((data) => {
         
-          console.log(data); //provisional to find the error
+          
     
         const moviesFromApi = data.map((doc) => {
           return {
@@ -40,6 +43,10 @@ export const MainView = () => {
         console.error("Error fetching movies:", error);
       });
   }, []);
+
+  if (!user) {
+    return <LoginView onLoggedIn={(user) => setUser(user)} />;
+  }
   
   
   if (selectedMovie) {
