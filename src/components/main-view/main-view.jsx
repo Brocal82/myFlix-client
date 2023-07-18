@@ -10,13 +10,19 @@ export const MainView = () => {
 
   const [user, setUser] = useState(null);
 
+  const [token, setToken] = useState(null);
+
   useEffect(() => {
-    fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/movies")
+    if (!token) {
+      return;
+    }
+    fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/movies", {
+      headers: { Authorization: `Bearer ${token}`}
+    })
       .then((response) => response.json())
       .then((data) => {
-        
-          
-    
+
+            
         const moviesFromApi = data.map((doc) => {
           return {
             _id: doc._id,
@@ -24,13 +30,13 @@ export const MainView = () => {
             Genre: {
             Name: doc.Genre.Name,
             Description: doc.Genre.Description,
-           },
+          },
             Director: {
               Name: doc.Director.Name,
               Bio: doc.Director.Bio,
               BirthYear: doc.Director.BirthYear,
               DeathYear: doc.Director.DeathYear,
-            },
+          },
             Actors: doc.Actors,
             ImageUrl: doc.ImageUrl,
             Featured: doc.Featured,
@@ -42,11 +48,20 @@ export const MainView = () => {
       .catch((error) => {
         console.error("Error fetching movies:", error);
       });
-  }, []);
+  }, [token]);
 
   if (!user) {
-    return <LoginView onLoggedIn={(user) => setUser(user)} />;
-  }
+    return (
+      <LoginView 
+      onLoggedIn={(user, token) => {
+        setUser(user);
+        setToken(token);
+      }} 
+    />
+  );
+}
+
+  
   
   
   if (selectedMovie) {

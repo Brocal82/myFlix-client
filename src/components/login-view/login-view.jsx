@@ -16,15 +16,23 @@ export const LoginView = ({ onLoggedIn }) => {
 
     fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/login", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(data)
-    }).then((response) => {
-      if (response.ok) {
-        onLoggedIn(username);
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Login response: ", data);
+      if (data.user) {
+        onLoggedIn(data.user, data.token);
       } else {
-        alert("Login failed");
+        alert("No such user");
       }
-    });
-  };
+    })
+      .catch((e) => {
+        alert("Something went wrong");
+      });
 
 
   return (
@@ -54,4 +62,4 @@ export const LoginView = ({ onLoggedIn }) => {
       <button type="submit">Submit</button>
     </form>
   );
-};
+}};
