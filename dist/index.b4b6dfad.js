@@ -28514,8 +28514,8 @@ const LoginView = ({ onLoggedIn })=>{
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            access: username,
-            secret: password
+            Username: username,
+            Password: password
         };
         fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/login", {
             method: "POST",
@@ -28600,7 +28600,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"cfypl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4ccL6","react":"21dqq"}],"4OGiN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"cfypl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4ccL6"}],"4OGiN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28623,12 +28623,12 @@ const SignupView = ()=>{
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            username: username,
-            password: password,
+            Username: username,
+            Password: password,
             Email: email,
             Birthday: birthday
         };
-        fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/signup", {
+        fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -28746,6 +28746,6 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"cfypl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4ccL6","react":"21dqq"}],"lJZlQ":[function() {},{}]},["axDeS","ha3RX","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"cfypl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4ccL6"}],"lJZlQ":[function() {},{}]},["axDeS","ha3RX","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

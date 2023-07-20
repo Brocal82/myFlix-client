@@ -10,13 +10,13 @@ export const SignupView = () => {
     event.preventDefault();
 
     const data = {
-      username: username,
-      password: password,
+      Username: username,
+      Password: password,
       Email: email,
       Birthday: birthday
     };
 
-    fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/signup", {
+    fetch("https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
