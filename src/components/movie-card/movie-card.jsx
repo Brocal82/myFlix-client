@@ -1,16 +1,25 @@
 import PropTypes from "prop-types";
+import { Button, Card } from "react-bootstrap";
+
 
 export const MovieCard = ({ movie, onMovieClick }) => {
   return (
-    <div
+    
+    <Card
       onClick={() => {
         onMovieClick(movie);
       }}
     >
-      <h2>{movie.Title}</h2>
-    </div>
+      <Card.Img variant="top" src={movie.ImageUrl}/>
+      <Card.Body>
+        <Card.Title className="text-center white-text">{movie.Title}</Card.Title>
+        <Card.Text className="text-center white-text">{movie.Genre.Name}</Card.Text>
+      </Card.Body>
+
+    </Card>
   );
 };
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
@@ -31,3 +40,5 @@ MovieCard.propTypes = {
     Featured: PropTypes.bool.isRequired,
   }).isRequired,
 };
+
+
