@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
 export const SignupView = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -33,45 +36,54 @@ export const SignupView = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
+    <Form onSubmit={handleSubmit}>
+      <h3 className="white-text">Sign up:</h3>
+      <Form.Group controlId="formUsername">
+        <Form.Label className="white-text">Username:</Form.Label>
+        <Form.Control
+          className="bg-input"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
           minLength="3"
         />
-      </label>
-      <label>
-        Password:
-        <input
+      </Form.Group>
+      <Form.Group controlId="formPassword">
+        <Form.Label className="white-text">Password:</Form.Label>
+        <Form.Control
+          className="bg-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Email:
-        <input
+      </Form.Group>
+
+      <Form.Group controlId="formEmail">
+        <Form.Label className="white-text">Email:</Form.Label>
+        <Form.Control
+          className="bg-input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
-      <label>
-        Birthday:
-        <input
+      </Form.Group>
+
+      <Form.Group controlId="formBirthday">
+        <Form.Label className="white-text">Birthday:</Form.Label>
+        <Form.Control
+          className="bg-input"
           type="date"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
           required
         />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+      </Form.Group>
+      
+  
+      <Button className="submit-button" variant="primary" type="submit">Submit</Button>
+    </Form>
   );
 };
