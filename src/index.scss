@@ -9,7 +9,6 @@ $body-bg: black;
   width: 60%;
   background-color: #E50914;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 20px;
@@ -25,9 +24,9 @@ $body-bg: black;
   color: white;
 }
 
-body{
-  background-color: black;
-}
+// body{
+//   background-color: black;
+// }
 h1 {
   color: white;
 }
@@ -53,4 +52,10 @@ p {
 
 .bg-input{
   background-color: white;
+  color: black;
+  
+}
+.bg-input:focus {
+  background-color: white; /* Color de fondo/letra deseado cuando está seleccionado */
+  color: black; 
 }

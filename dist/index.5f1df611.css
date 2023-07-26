@@ -13202,7 +13202,6 @@ textarea.form-control-lg {
   border-radius: 5px;
   width: 60%;
   margin-top: 20px;
-  padding: 10px 20px;
   font-size: 20px;
 }
 
@@ -13210,15 +13209,7 @@ textarea.form-control-lg {
   background-color: #8b0000;
 }
 
-.white-text {
-  color: #fff;
-}
-
-body {
-  background-color: #000;
-}
-
-h1, .h1 {
+.white-text, h1, .h1 {
   color: #fff;
 }
 
@@ -13243,7 +13234,8 @@ p {
   margin-top: 20px;
 }
 
-.bg-input {
+.bg-input, .bg-input:focus {
+  color: #000;
   background-color: #fff;
 }
 
