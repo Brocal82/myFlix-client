@@ -7,9 +7,7 @@ import { ProfileView } from "../profile-view/profile-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
@@ -53,11 +51,19 @@ export const MainView = () => {
         });
         setMovies(moviesFromApi);
       })
-
       .catch((error) => {
         console.error("Error fetching movies:", error);
       });
   }, [token]);
+
+  // Define the onBackClick function in the MainView component
+  const handleBackClick = () => {
+    // Perform any necessary actions before navigating back
+    // For example, you could save form data or do other clean-up tasks.
+    // Then navigate back to the previous page.
+    // For a simple "Back" button, you can use the <Link> component:
+    // <Link to="/">Back</Link>
+  };
 
   return (
     <BrowserRouter>
@@ -119,11 +125,13 @@ export const MainView = () => {
                   <Col> The list is empty</Col>
                 ) : (
                   <Col md={8}>
+                    {/* Pass the onBackClick function as a prop */}
                     <MovieView
                       movies={movies}
                       user={user}
                       token={token}
                       updateUser={updateUser}
+                      onBackClick={handleBackClick} // Pass the callback function as a prop
                     />
                   </Col>
                 )}
