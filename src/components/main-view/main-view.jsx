@@ -5,6 +5,7 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { ProfileView } from "../profile-view/profile-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
+import { SearchBar } from "../search-bar/search-bar"; // Import the SearchBar component
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -16,6 +17,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]); // State to hold the filtered movies
 
   const updateUser = (user) => {
     setUser(user);
@@ -57,12 +59,11 @@ export const MainView = () => {
   }, [token]);
 
   // Define the onBackClick function in the MainView component
-  const handleBackClick = () => {
-    // Perform any necessary actions before navigating back
-    // For example, you could save form data or do other clean-up tasks.
-    // Then navigate back to the previous page.
-    // For a simple "Back" button, you can use the <Link> component:
-    // <Link to="/">Back</Link>
+  const handleBackClick = () => {};
+
+  // Function to update the filtered movies when the user searches
+  const handleMovieSearch = (filteredMovies) => {
+    setFilteredMovies(filteredMovies);
   };
 
   return (
@@ -148,11 +149,25 @@ export const MainView = () => {
                   <Col>This list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
-                        <MovieCard movie={movie} />
-                      </Col>
-                    ))}
+                    {/* Add the SearchBar component */}
+                    <Col className="mb-4" md={12}>
+                      <SearchBar
+                        movies={movies}
+                        handleMovieSearch={handleMovieSearch} // Pass the callback function
+                      />
+                    </Col>
+                    {filteredMovies.length === 0 ? (
+                      <Col className="white-text">Movie Not Found!!!.</Col>
+                    ) : (
+                      // Render the filtered movies
+                      <>
+                        {filteredMovies.map((movie) => (
+                          <Col className="mb-4" key={movie._id} md={3}>
+                            <MovieCard movie={movie} />
+                          </Col>
+                        ))}
+                      </>
+                    )}
                   </>
                 )}
               </>
