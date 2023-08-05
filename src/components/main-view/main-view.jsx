@@ -157,7 +157,11 @@ export const MainView = () => {
                       />
                     </Col>
                     {filteredMovies.length === 0 ? (
-                      <Col className="white-text">Movie Not Found!!!.</Col>
+                      movies.map((movie) => (
+                        <Col className="mb-4" key={movie._id} md={3}>
+                          <MovieCard movie={movie} />
+                        </Col>
+                      ))
                     ) : (
                       // Render the filtered movies
                       <>
