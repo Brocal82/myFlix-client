@@ -15,7 +15,7 @@ export const ProfileView = ({
   );
 
   const deleteAccount = () => {
-    fetch(`https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/users/${user.Username}`, {
+    fetch(`https://myflixapi-0ezn.onrender.com/users/${user.Username}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
