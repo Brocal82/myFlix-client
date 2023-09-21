@@ -18,7 +18,7 @@ export const MovieView = ({ movies, user, token, updateUser, onBackClick }) => {
 
   const addFavorite = () => {
     fetch(
-      `https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/users/${user.Username}/movies/${MovieId}`,
+      `https://flixapirender.onrender.com/users/${user.Username}/movies/${MovieId}`,
       {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
@@ -46,7 +46,7 @@ export const MovieView = ({ movies, user, token, updateUser, onBackClick }) => {
 
   const removeFavorite = () => {
     fetch(
-      `https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/users/${user.Username}/movies/${MovieId}`,
+      `https://flixapirender.onrender.com/users/${user.Username}/movies/${MovieId}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
