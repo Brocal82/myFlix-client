@@ -16,7 +16,7 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
       Birthday: birthday,
     };
     fetch(
-      `https://myflixapi-0ezn.onrender.com/users/${user.Username}`,
+      `https://my-flix-app1982-c9c41fd3e5b8.herokuapp.com/users/${user.Username}`,
       {
         method: "PUT",
         body: JSON.stringify(data),
