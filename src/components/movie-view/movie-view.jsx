@@ -18,7 +18,7 @@ export const MovieView = ({ movies, user, token, updateUser, onBackClick }) => {
 
   const addFavorite = () => {
     fetch(
-      `https://flixapirender.onrender.com/users/${user.Username}/movies/${MovieId}`,
+      `https://myflix-diaf.onrender.com/users/${user.Username}/movies/${MovieId}`,
       {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
@@ -46,7 +46,7 @@ export const MovieView = ({ movies, user, token, updateUser, onBackClick }) => {
 
   const removeFavorite = () => {
     fetch(
-      `https://flixapirender.onrender.com/users/${user.Username}/movies/${MovieId}`,
+      `https://myflix-diaf.onrender.com/users/${user.Username}/movies/${MovieId}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },

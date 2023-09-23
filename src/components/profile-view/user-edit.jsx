@@ -16,7 +16,7 @@ export const UserEdit = ({ user, token, updateUser, onLoggedOut }) => {
       Birthday: birthday,
     };
     fetch(
-      `https://flixapirender.onrender.com/users/${user.Username}`,
+      `https://myflix-diaf.onrender.com/users/${user.Username}`,
       {
         method: "PUT",
         body: JSON.stringify(data),

@@ -27208,7 +27208,7 @@ const MainView = ()=>{
     };
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("https://flixapirender.onrender.com/movies", {
+        fetch("https://myflix-diaf.onrender.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -46931,7 +46931,7 @@ const MovieView = ({ movies, user, token, updateUser, onBackClick })=>{
         MovieId
     ]);
     const addFavorite = ()=>{
-        fetch(`https://flixapirender.onrender.com/users/${user.Username}/movies/${MovieId}`, {
+        fetch(`https://myflix-diaf.onrender.com/users/${user.Username}/movies/${MovieId}`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -46953,7 +46953,7 @@ const MovieView = ({ movies, user, token, updateUser, onBackClick })=>{
         });
     };
     const removeFavorite = ()=>{
-        fetch(`https://flixapirender.onrender.com/users/${user.Username}/movies/${MovieId}`, {
+        fetch(`https://myflix-diaf.onrender.com/users/${user.Username}/movies/${MovieId}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -47295,7 +47295,7 @@ const LoginView = ({ onLoggedIn })=>{
             Username: username,
             Password: password
         };
-        fetch("https://flixapirender.onrender.com/login", {
+        fetch("https://myflix-diaf.onrender.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47438,7 +47438,7 @@ const SignupView = ()=>{
             Email: email,
             Birthday: birthday
         };
-        fetch("https://flixapirender.onrender.com/users", {
+        fetch("https://myflix-diaf.onrender.com/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -47620,7 +47620,7 @@ var _reactBootstrap = require("react-bootstrap");
 const ProfileView = ({ user, token, movies, updateUser, onLoggedOut })=>{
     let favoriteMovies = movies.filter((m)=>user.FavoriteMovies.includes(m._id));
     const deleteAccount = ()=>{
-        fetch(`https://flixapirender.onrender.com/users/${user.Username}`, {
+        fetch(`https://myflix-diaf.onrender.com/users/${user.Username}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -47807,7 +47807,7 @@ const UserEdit = ({ user, token, updateUser, onLoggedOut })=>{
             Email: email,
             Birthday: birthday
         };
-        fetch(`https://flixapirender.onrender.com/users/${user.Username}`, {
+        fetch(`https://myflix-diaf.onrender.com/users/${user.Username}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {

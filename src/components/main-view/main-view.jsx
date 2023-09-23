@@ -27,7 +27,7 @@ export const MainView = () => {
   useEffect(() => {
     if (!token) return;
 
-    fetch("https://flixapirender.onrender.com/movies", {
+    fetch("https://myflix-diaf.onrender.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())

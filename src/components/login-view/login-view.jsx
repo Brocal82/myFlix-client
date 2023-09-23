@@ -15,7 +15,7 @@ export const LoginView = ({ onLoggedIn }) => {
       Password: password
     };
 
-    fetch("https://flixapirender.onrender.com/login", {
+    fetch("https://myflix-diaf.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

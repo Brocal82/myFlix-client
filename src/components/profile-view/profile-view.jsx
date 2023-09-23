@@ -15,7 +15,7 @@ export const ProfileView = ({
   );
 
   const deleteAccount = () => {
-    fetch(`https://flixapirender.onrender.com/users/${user.Username}`, {
+    fetch(`https://myflix-diaf.onrender.com/users/${user.Username}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
