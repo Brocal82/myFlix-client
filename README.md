@@ -1,26 +1,34 @@
-MyFlix
-Below is a detailed description and explanation of the source code for your React application "MyFlix."
+## Movie Application
 
-Description
-"MyFlix" is a React project that implements a website for managing movies. It allows users to register, log in, search for movies, view movie details, and access their profile. The application uses react-bootstrap to enhance the user interface and experience.
+This Application will serve as Front End application of an API and Database. [existing server side code](https://github.com/Brocal82/myFlix-client)
+This application will interact with a movie API and allow users to access information about movies.
 
-Usage
-"MyFlix" consists of various views and components:
+## Major features of this app
 
-MovieCard: Component to display a movie card.
-MovieView: Component to show the details of a selected movie.
-LoginView: View for user login.
-SignupView: View for new user registration.
-ProfileView: View that displays the user profile.
-NavigationBar: Top navigation bar that allows users to navigate between different views.
-SearchBar: Component that enables users to search for movies.
-The main component of the application is MainView, which manages the global state of the application and renders different views and components based on the current URL.
+- Users can register and log in to Movies App.
+- App home page will display list of movies , which users will see after logging in.
+- Navigation Bar will give access to other app views, for example: home page, profile page
+- By clicking on movie title users can see a detailed view of a movie with its description and  
+  director details.
+- Users can ADD /REMOVE movies in their favorite movie list.
+- Users can view their favorite movies in their profile view.
+- Users can update their information.
+- Users can log out of their account
+- Users can delete their account.
 
-Features
-User registration and login.
-Viewing movie details.
-Movie search by title.
-Access to user profiles.
-Additional Notes
-"MyFlix" fetches data from an external API to obtain movie information. Ensure that the API is available and operational for the application to fetch data successfully.
-The source code may be subject to changes and future improvements as needed.
+## To run the Project
+
+The application is hosted on Netlify and can be viewed [Click here](https://my-flix1982.netlify.app)
+
+## Dependencies
+
+- Bootstrap
+- Prop-Types
+- React
+- React- Bootstrap
+- React - Dom
+- React- Router
+
+#### To start development and run on a web browser
+
+Command is : parcel src/index.html
